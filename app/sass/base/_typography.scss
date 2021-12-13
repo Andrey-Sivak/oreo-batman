@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'TT Limes';
+  src: local('TT Limes Sans Regular'), local('TT-Limes-Sans-Regular'),
+  url('../../fonts/TTLimesSans-Regular.woff2') format('woff2'),
+  url('../../fonts/TTLimesSans-Regular.woff') format('woff'),
+  url('../../fonts/TTLimesSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Limes';
+  src: local('TT Limes Sans Bold'), local('TT-Limes-Sans-Bold'),
+  url('../../fonts/TTLimesSans-Bold.woff2') format('woff2'),
+  url('../../fonts/TTLimesSans-Bold.woff') format('woff'),
+  url('../../fonts/TTLimesSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../../fonts/MYRIADPRO-REGULAR.OTF');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OfficinaSansC';
+  src: url('../../fonts/ofont.ru_OfficinaSansBookC.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OfficinaSansC';
+  src: url('../../fonts/OfficinaSansBoldC.otf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
