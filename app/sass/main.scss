@@ -17,3 +17,387 @@ html {
   font-family: 'TT Limes', sans-serif;
   scroll-behavior: smooth;
 }
+
+.main {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+
+  @include response-to(medium) {
+    flex-wrap: wrap;
+  }
+}
+
+.left {
+  width: 539px;
+  position: relative;
+  background: radial-gradient(44.02% 77.06% at 50% 50%, #0038DA 0%, #002562 100%);
+  padding-top: 69px;
+
+  @include response-to(huge) {
+    width: 533px;
+  }
+
+  @include response-to(medium) {
+    width: 100%;
+    order: 2;
+    padding-bottom: 51px;
+    padding-top: 39px;
+  }
+
+  &__note {
+    position: absolute;
+
+    @include response-to(small) {
+      display: none;
+    }
+
+    &.one {
+      top: 450px;
+      left: 0;
+    }
+
+    &.two {
+      top: 200px;
+      left: 60px;
+    }
+
+    &.three {
+      top: 62px;
+      right: 20px;
+    }
+
+    &.four {
+      bottom: 195px;
+      right: 3px;
+    }
+  }
+
+  &__top-img {
+    text-align: center;
+    margin-bottom: 57px;
+
+    @include response-to(huge) {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__caption {
+    -webkit-text-stroke: 1px #FC18D6;
+    text-shadow: 0 0 12px #FC18D6;
+    color: #fff;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include response-to(small) {
+      font-size: 32px;
+      line-height: 39px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    
+    a {
+      color: #FC18D6;
+      text-decoration: underline;
+
+      @include on-event {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__bottom {
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.right {
+  padding-left: 131px;
+  padding-bottom: 30px;
+  flex: 1 0 auto;
+  position: relative;
+  background-image: url('../img/right-bg.png');
+  background-position: left top;
+  background-size: cover;
+  background-color: #0066A9;
+
+  @include response-to(huge) {
+    padding-left: 64px;
+  }
+
+  @include response-to(medium) {
+    width: 100%;
+    order: 1;
+    overflow: hidden;
+    padding-left: 22px;
+    padding-bottom: 9px;
+  }
+
+  .batman {
+    position: absolute;
+    z-index: 1;
+    top: -80px;
+    left: 630px;
+
+    @include response-to(huge) {
+      left: unset;
+      right: -270px;
+    }
+
+    @include response-to(small) {
+      right: -247px;
+      top: 67px;
+
+      img {
+        width: 463px;
+        height: auto;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__oreo {
+    margin-left: -40px;
+    margin-top: -11px;
+    margin-bottom: 25px;
+
+    @include response-to(huge) {
+      margin-bottom: -3px;
+    }
+
+    @include response-to(small) {
+
+      img {
+        width: 285px;
+        height: auto;
+      }
+    }
+  }
+
+  &__text-img {
+    margin-left: -18px;
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+
+    @include response-to(huge) {
+      margin-bottom: 32px;
+    }
+
+    @include response-to(small) {
+      margin-bottom: 22px;
+    }
+
+    &_batman {
+      margin-bottom: 4px;
+
+      @include response-to(small) {
+        width: 185px;
+        height: auto;
+      }
+    }
+
+    &_text {
+
+      @include response-to(small) {
+        width: 161px;
+        height: auto;
+      }
+    }
+  }
+
+  &__text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include response-to(small) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .normal {
+      font-weight: 400;
+    }
+    
+    .red {
+      color: #CD0319;
+    }
+
+    .huge-br {
+      display: none;
+
+      @include response-to(huge) {
+        display: block;
+      }
+
+      @include response-to(small) {
+        display: none;
+      }
+    }
+
+    .pc-br {
+
+      @include response-to(small) {
+        display: none;
+      }
+    }
+
+    .small-br {
+      display: none;
+
+      @include response-to(small) {
+        display: block;
+      }
+    }
+  }
+
+  .copy {
+    color: #1A96D4;
+    font-size: 11px;
+    line-height: 14px;
+    font-family: 'Myriad Pro', sans-serif;
+  }
+}
+
+.form {
+  margin-bottom: 51px;
+  width: 277px;
+
+  @include response-to(huge) {
+    margin-bottom: 65px;
+  }
+
+  @include response-to(small) {
+    margin-bottom: 43px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+
+    span.error {
+      display: none!important;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #fff;
+    padding: 14px 19px;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 30px;
+
+    &::placeholder {
+      font-family: 'TT Limes', sans-serif;
+      color: #8996AE;
+      text-transform: uppercase;
+    }
+
+    &.error {
+      border: 2px solid red;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    span.error {
+      display: none!important;
+    }
+
+    input {
+      display: none;
+
+      &:checked + .check:before {
+        content: '';
+      }
+
+      &.error + .check {
+        border-color: red;
+      }
+    }
+
+    .check {
+      border: 1px solid #8996AE;
+      border-radius: 2px;
+      width: 14px;
+      height: 14px;
+      position: relative;
+      background-color: transparent;
+      margin-right: 7px;
+
+      &:before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 1px;
+        background: #8996AE;
+      }
+    }
+
+    .check-text {
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #8996AE;
+    }
+  }
+
+  &__btn {
+    background: linear-gradient(90deg, #FC0027 4.2%, #96040D 103.78%);
+    border-radius: 30px;
+    width: 140px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'TT Limes', sans-serif;
+    display: block;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+
+    @include on-event {
+      text-decoration: underline;
+    }
+  }
+}

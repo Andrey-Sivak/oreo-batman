@@ -1,10 +1,21 @@
 .footer {
-  padding-top: 30px;
-  padding-bottom: 20px;
+  padding-top: 48px;
+  padding-bottom: 45px;
   background-color: #fff;
   color: #46248A;
   position: relative;
   z-index: 20;
+  font-family: 'OfficinaSansC', sans-serif;
+
+  &__container {
+    max-width: 1780px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @include response-to(huge) {
+      max-width: 1108px;
+    }
+  }
 
   &__wrap {
     display: flex;
@@ -19,9 +30,8 @@
 
   &__menu {
     display: flex;
-    max-width: 850px;
     width: 100%;
-    margin: 0 auto 16px;
+    margin: 0 auto 35px;
     justify-content: space-between;
 
     @include response-to(small) {
@@ -31,7 +41,7 @@
     &_item {
       display: block;
       text-decoration: underline;
-      font-size: 16px;
+      font-size: 14px;
 
       @include on-event {
         text-decoration: none;
