@@ -150,6 +150,10 @@ html {
     padding-bottom: 9px;
   }
 
+  @include response-to(small) {
+    background-image: url('../img/main-bg-mob.png');
+  }
+
   .batman {
     position: absolute;
     z-index: 1;
@@ -172,6 +176,18 @@ html {
     }
   }
 
+  &__mob-img {
+    position: absolute;
+    z-index: 3;
+    display: none;
+    bottom: 30px;
+    right: 3px;
+
+    @include response-to(small) {
+      display: block;
+    }
+  }
+
   &__content {
     position: relative;
     z-index: 2;
@@ -187,6 +203,7 @@ html {
     }
 
     @include response-to(small) {
+      margin-left: -25px;
 
       img {
         width: 285px;
@@ -218,6 +235,17 @@ html {
       @include response-to(small) {
         width: 185px;
         height: auto;
+        display: none;
+      }
+
+      &.mob {
+        display: none;
+
+        @include response-to(small) {
+          display: block;
+          width: 196px;
+          margin-left: -6px;
+        }
       }
     }
 

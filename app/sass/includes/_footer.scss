@@ -7,6 +7,11 @@
   z-index: 20;
   font-family: 'OfficinaSansC', sans-serif;
 
+  @include response-to(small) {
+    padding-top: 33px;
+    padding-bottom: 35px;
+  }
+
   &__container {
     max-width: 1780px;
     padding: 0 20px;
@@ -36,6 +41,10 @@
 
     @include response-to(small) {
       flex-wrap: wrap;
+      margin-bottom: 0;
+      position: absolute;
+      left: 20px;
+      top: 88px;
     }
 
     &_item {
@@ -43,18 +52,17 @@
       text-decoration: underline;
       font-size: 14px;
 
-      @include on-event {
-        text-decoration: none;
+      @include response-to(small) {
+        width: 100%;
+        font-size: 12px;
+
+        &:first-of-type {
+          margin-bottom: 8px;
+        }
       }
 
-      @include response-to(small) {
-        width: 50%;
-        font-size: 12px;
-        margin-bottom: 14px;
-
-        &:nth-of-type(2) {
-          text-align: right;
-        }
+      @include on-event {
+        text-decoration: none;
       }
     }
   }
@@ -85,26 +93,29 @@
 
     @include response-to(small) {
       width: 100%;
-    }
 
-    &:first-of-type {
-
-      @include response-to(small) {
-        order: 3;
+      &:last-of-type {
+        order: 1;
+        margin-bottom: 85px;
       }
-    }
 
-    &:nth-of-type(2) {
-      width: 78%;
+      &:nth-of-type(2) {
+        order: 2;
+      }
 
-      @include response-to(small) {
-        width: 100%;
+      &:first-of-type {
+        position: absolute;
+        right: 15px;
+        width: fit-content;
+        top: 84px;
+        display: flex;
+        flex-direction: column;
       }
     }
 
     &_phone {
       display: block;
-      font-weight: 900;
+      font-weight: bold;
       font-size: 21px;
       margin-bottom: 5px;
 
@@ -113,8 +124,10 @@
       }
 
       @include response-to(small) {
-        text-align: center;
-        margin-bottom: 0;
+        text-align: right;
+        order: 1;
+        font-size: 20px;
+        margin-bottom: 1px;
       }
     }
 
@@ -129,8 +142,8 @@
       }
 
       @include response-to(small) {
-        margin-bottom: 24px;
-        text-align: center;
+        text-align: right;
+        order: 2;
       }
     }
 
@@ -139,7 +152,7 @@
       margin: 0 auto 20px;
 
       @include response-to(small) {
-        margin-bottom: 14px;
+        margin-bottom: 0;
       }
 
       & img {
@@ -154,9 +167,10 @@
       font-size: 12px;
 
       @include response-to(small) {
-        max-width: 225px;
-        margin: 0 auto 17px;
-        font-size: 8px;
+        max-width: 300px;
+        margin: 20px auto 0;
+        font-size: 12px;
+        line-height: 14px;
       }
     }
 
@@ -178,17 +192,13 @@
       background-position: center;
 
       @include response-to(small) {
-        width: 47px;
-        height: 47px;
-        margin-bottom: 14px;
+        width: 29px;
+        height: 29px;
+        margin-bottom: 0;
       }
 
       &:not(:last-of-type) {
         margin-right: 8px;
-
-        @include response-to(small) {
-          margin-right: 13px;
-        }
       }
 
       &.vk {
