@@ -165,7 +165,7 @@ input[type="number"] {
       .footer .info-text br {
         display: none; } }
   .footer__item {
-    width: 50%; }
+    width: auto; }
     @media (max-width: 767px) {
       .footer__item {
         width: 100%; }

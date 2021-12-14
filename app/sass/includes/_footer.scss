@@ -89,7 +89,7 @@
   }
 
   &__item {
-    width: 50%;
+    width: auto;
 
     @include response-to(small) {
       width: 100%;
