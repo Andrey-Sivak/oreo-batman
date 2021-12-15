@@ -88,7 +88,7 @@ window.addEventListener('load', function () {
     (function scroll() {
         if (!isMobile) return;
 
-        const btn = document.querySelector('.right__oreo');
+        const btn = document.querySelector('.right__mob-img');
         btn.addEventListener('click', function (e) {
             e.preventDefault();
 
