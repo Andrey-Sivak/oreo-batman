@@ -137,10 +137,16 @@ html {
   padding-bottom: 30px;
   flex: 1 0 auto;
   position: relative;
-  background-image: url('../img/right-bg.png');
+  background-image: url('../img/rt-bg.png');
   background-position: left top;
-  background-size: cover;
+  background-size: initial;
+  background-repeat: no-repeat;
   background-color: #0066A9;
+  background-blend-mode: multiply;
+
+  @media(min-width:1930px) {
+    background-size: cover;
+  }
 
   @include response-to(huge) {
     padding-left: 64px;
@@ -156,6 +162,8 @@ html {
 
   @include response-to(small) {
     background-image: url('../img/main-bg-mob.png');
+    background-blend-mode: unset;
+    background-size: cover;
   }
 
   .batman {
@@ -175,8 +183,37 @@ html {
 
       img {
         width: 463px;
-        height: auto;
+        height: 726px;
       }
+    }
+  }
+
+  .city-bg {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 153px;
+
+    @media(max-width:1920px) {
+      top: 142px;
+    }
+
+    @include response-to(huge) {
+      top: 153px;
+    }
+
+    @include response-to(small) {
+      display: none;
+    }
+
+    &:before {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 90%;
+      height: 1500px;
+      content: '';
+      background: #010918;
     }
   }
 
@@ -208,8 +245,8 @@ html {
 
     @include response-to(small) {
       margin-left: -25px;
-      margin-top: 3px;
       margin-bottom: -3px;
+      margin-top: -3px;
 
       img {
         width: 285px;
@@ -233,10 +270,28 @@ html {
 
     @include response-to(small) {
       margin-bottom: 22px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+        height: 30px;
+        background: #010918;
+        z-index: 0;
+      }
     }
 
     &_batman {
       margin-bottom: 4px;
+
+      @include response-to(huge) {
+        width: 237px;
+        height: auto;
+      }
 
       @include response-to(small) {
         display: none;
@@ -246,6 +301,8 @@ html {
         display: none;
 
         @include response-to(small) {
+          width: 196px;
+          height: auto;
           display: block;
           margin-left: -6px;
         }
@@ -254,9 +311,15 @@ html {
 
     &_text {
 
+      @include response-to(huge) {
+        width: 208px;
+        height: auto;
+      }
+
       @include response-to(small) {
         width: 161px;
-        height: auto;
+        position: relative;
+        z-index: 1;
       }
     }
   }

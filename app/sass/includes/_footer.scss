@@ -5,6 +5,7 @@
   color: #46248A;
   position: relative;
   z-index: 20;
+  overflow: hidden;
   font-family: 'OfficinaSansC', sans-serif;
 
   @include response-to(small) {
