@@ -76,6 +76,10 @@ window.addEventListener('load', function () {
                     },
                     messages: {
                         email: 'Некорректный e-mail'
+                    },
+                    submitHandler: function(form) {
+                        form.reset();
+                        popupShow();
                     }
                 });
             });
@@ -83,6 +87,9 @@ window.addEventListener('load', function () {
                 return this.optional(element) || /\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}/.test(value);
             });
         })();
+
+        const modal = document.querySelector('.modal');
+        modal.addEventListener('click', popupHide);
     })();
 
     (function scroll() {
@@ -110,4 +117,19 @@ function scrollTo(id) {
         top: y,
         behavior: 'smooth'
     });
+}
+
+function popupShow() {
+    const modal = document.querySelector('.modal');
+    modal.classList.add('active');
+    document.body.classList.add('no-scrolling');
+}
+
+function popupHide(e) {
+    const target = e.target;
+
+    if (target.dataset.close) {
+        this.classList.remove('active');
+        document.body.classList.remove('no-scrolling');
+    }
 }
